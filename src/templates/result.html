@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ block.super }} {% endblock title %}
+
+{% block content %}
+
+    <h3>Search Result</h3>
+
+    <ul>
+        {% for obj in object_list %}
+            <li><a href="u/{{obj}}">{{obj}}</a></li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

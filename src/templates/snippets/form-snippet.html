@@ -1,0 +1,9 @@
+{% if form.error %}
+    {{ form.error }}
+{% endif %}
+
+<form method="POST"> {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-fill">save</button>
+</form>

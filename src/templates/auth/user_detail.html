@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>{{ user }}</h3>
+<p>{% include 'profiles/snippet/follow_form.html' with username=user.username%}</p>
+
+<p>Read Messages from</p><br/>
+
+<ul>
+    {% for user in users %}
+
+    <li><a href="/msgs/{{user}}">{{user}}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

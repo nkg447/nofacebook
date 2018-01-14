@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+
+{% block title %}{{ block.super }} {% endblock title %}
+
+{% block content %}
+
+    <form class="form" method="GET" action=".">
+        <input type="text" placeholder="Search.." name="q" value="{{ request.GET.q }}">
+
+        <button class="btn btn-primary btn-sm btn-round" type="submit">Search</button>
+    </form>
+    <p>Hi {{ request.user }}!</p>
+
+{% endblock content %}

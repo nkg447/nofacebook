@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3><a href="{% url 'profile' username=user_ %}">{{ user_ }}</a></h3>
+<form method="POST" > {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-fill">send</button>
+</form>
+
+{% for obj in object_list %}
+
+    <p align="{% ifequal obj.user_from.username user_ %}right{% endifequal %}" >{{obj.message}}  </p>
+{% endfor %}
+
+
+{% endblock content %}
